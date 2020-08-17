@@ -14,7 +14,8 @@ A azure function app allows the user to browse the enumerations via select the l
    2. Run command `cd nodejs-cosmosdb-task`
    3. Run command `npm install`
    4. Run command `npm start`
-   4. Enjoy.
+   5. Go to `http://localhost:7071/api/SCSolTask`.
+   6. Enjoy.
    
    # Developer
    **[Amin A Talahmeh](https://github.com/ameentalahmeh)** 

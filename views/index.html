@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Smart Choice Solutions Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+    /* Common */
+    header {
+        padding: 2%;
+        margin: 0;
+        color: white;
+        border: 0;
+        background-color: #4CAF50;
+        font-size: xx-large;
+    }
+
+    .showForm {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border: 0;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        margin: 2% auto;
+        padding: 2%;
+    }
+
+    .hideForm {
+        display: none;
+    }
+
+    select,
+    input {
+        margin: 1%;
+        padding: 1%;
+        font-size: medium;
+    }
+
+    input[type=submit] {
+        align-self: center;
+        color: white;
+        background-color: #4CAF50;
+        border: 0;
+        cursor: pointer;
+    }
+
+    /* Forms container */
+
+    .formsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Messages */
+
+    .errMsg {
+        color: red;
+        display: flex;
+        justify-content: center;
+        margin: 2% auto;
+    }
+
+    .infoMsg {
+        color: black;
+        margin: 2% 0 2% 23%
+    }
+
+
+    /* Table */
+
+    #enums {
+        width: 54%;
+        border-collapse: collapse;
+        margin: 2% auto;
+    }
+
+    #enums td,
+    #enums th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #enums tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #enums tr:hover {
+        background-color: #ddd;
+    }
+
+    #enums th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .navBar {
+        margin: 0;
+        padding: 1% 0;
+        overflow: hidden;
+        background-color: grey;
+    }
+
+    a {
+        margin: 0;
+        padding: 1.5%;
+        color: white;
+        cursor: pointer;
+    }
+
+    .selected, a:hover {
+        background-color: #111;
+    }
+
+    /* Font Style */
+    header,
+    select,
+    input,
+    h3,
+    #noEnumsFoundMsg,
+    #enumsFoundMsg,
+    a,
+    #enums {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+</style>
+
+<body>
+
+    <header>Enumerations</header>
+
+    <div class="navBar">
+        <a id="BrowsePage" class = "selected" onclick="menumSelectionHandling(event.target.innerHTML)">Browse</a>
+        <a id="CheckPage" onclick="menumSelectionHandling(event.target.innerHTML)">Check</a>
+    </div>
+
+    <!-- Input Area -->
+    <div class="formsContainer">
+        <form id="getEnumForm" class="showForm" action="/api/SCSolTask/getEnum" onsubmit="getEnums()" method="post">
+
+            <h3>Browse enumeration value pairs for requested language: </h3>
+
+            <select name="lang_code">
+                <option selected> Select language </option>
+                <option value="AR">Arabic</option>
+                <option value="EN">English</option>
+                <option value="FR">France</option>
+            </select>
+
+            <select name="enum_code">
+                <option selected> Select enumeration </option>
+                <option value="Day">Day Of Week</option>
+                <option value="Month">Month of Year</option>
+            </select>
+
+            <input type="submit" value="Browse" />
+
+            <h4 id="getEnumErrMsg" class="errMsg"></h4>
+
+        </form>
+
+        <form id="checkEnumValueForm" class="hideForm" action="/api/SCSolTask/checkEnumValue" onsubmit="checkEnumValue()" method="post">
+
+            <h3>Check enumeration value validation: </h3>
+
+            <select name="enum_code">
+                <option selected> Select enumeration </option>
+                <option value="Day">Day Of Week</option>
+                <option value="Month">Month of Year</option>
+            </select>
+
+            <input type="text" name="enum_value_code" placeholder="Input a enumeration value code ... " />
+
+            <input type="submit" value="Check" />
+
+            <h4 id="checkEnumValueErrMsg" class="errMsg"></h4>
+        </form>
+    </div>
+
+    <!-- Output Area -->
+    <div id="enumsDiv">
+    </div>
+
+    <script>
+
+        function menumSelectionHandling(selectedItem) {
+
+            document.getElementById("enumsDiv").innerHTML = "";
+            document.getElementById("getEnumErrMsg").innerHTML = "";
+            document.getElementById("checkEnumValueErrMsg").innerHTML = "";
+            document.getElementById("getEnumForm").reset();
+            document.getElementById("checkEnumValueForm").reset();
+
+
+            if (selectedItem == "Browse") {
+                document.getElementById("getEnumForm").className = 'showForm';
+                document.getElementById("checkEnumValueForm").className = 'hideForm';
+                document.getElementById("BrowsePage").className = 'selected';
+                document.getElementById("CheckPage").className = '';
+            } else {
+                document.getElementById("checkEnumValueForm").className = 'showForm';
+                document.getElementById("getEnumForm").className = 'hideForm';
+                document.getElementById("BrowsePage").className = '';
+                document.getElementById("CheckPage").className = 'selected';
+            }
+        }
+        function getEnums() {
+            event.preventDefault();
+
+            // Display Section
+            var enumertaionsDiv = document.getElementById("enumsDiv");
+            var missingInputsMsg = document.getElementById("getEnumErrMsg");
+
+            enumertaionsDiv.innerHTML = "";
+            missingInputsMsg.innerHTML = "";
+
+            fetch(event.target.action, {
+                method: 'POST',
+                body: new URLSearchParams(new FormData(event.target))
+            })
+                .then((response) => {
+                    return response.json()
+                })
+                .then((result) => {
+                    let { success, msgErr, enums } = result;
+                    if (success) {
+                        if (enums && enums.length > 0) {
+
+                            var enumsFoundMsg = document.createElement("h4");
+                            enumsFoundMsg.setAttribute("class", "infoMsg");
+                            enumsFoundMsg.innerText = "Enumeration pairs: "
+                            enumertaionsDiv.append(enumsFoundMsg);
+
+                            var enumertaionsTable = document.createElement("table");
+                            enumertaionsTable.setAttribute("id", "enums");
+                            var headRow = document.createElement("tr");
+
+                            ['#', "Enum value code", "Enum value name"].forEach(th => {
+                                let headTh = document.createElement("th");
+                                headTh.innerText = th;
+                                headRow.append(headTh);
+                            });
+
+                            enumertaionsTable.append(headRow);
+
+                            enums.forEach((enumertaion, idx) => {
+                                var tr = document.createElement("tr");
+                                let newEnum = { ID: idx + 1, ...enumertaion };
+                                Object.keys(newEnum).forEach(key => {
+                                    let td = document.createElement("td");
+                                    td.innerText = newEnum[key];
+                                    tr.append(td);
+                                })
+                                enumertaionsTable.appendChild(tr);
+                            });
+
+                            enumertaionsDiv.append(enumertaionsTable);
+                        }
+                        else {
+                            var noEnumsFoundMsg = document.createElement("h4");
+                            noEnumsFoundMsg.setAttribute("class", "errMsg");
+                            noEnumsFoundMsg.innerText = "No Enumerations found";
+                            enumertaionsDiv.append(noEnumsFoundMsg);
+                        }
+                    } else {
+                        missingInputsMsg.innerText = msgErr;
+                    }
+                })
+        }
+        function checkEnumValue() {
+            event.preventDefault();
+
+            // Display Section
+            var enumertaionsDiv = document.getElementById("enumsDiv");
+            var missingInputsMsg = document.getElementById("checkEnumValueErrMsg");
+
+            enumertaionsDiv.innerHTML = "";
+            missingInputsMsg.innerHTML = "";
+
+            fetch(event.target.action, {
+                method: 'POST',
+                body: new URLSearchParams(new FormData(event.target))
+            })
+                .then((response) => {
+                    return response.json()
+                })
+                .then((result) => {
+                    let { success, msgErr, checkResult, enum_code, enum_value_code } = result;
+                    if (success) {
+                        var checkResultMsg = document.createElement("h4");
+                        checkResultMsg.setAttribute("class", "infoMsg");
+                        checkResultMsg.innerText =
+                            checkResult ?
+                                "Check Result: There’s an enumeration value with code (" + enum_value_code + ") in the (" + enum_code + ") enumeration"
+                                :
+                                "Check Result: The enumeration-value code (" + enum_value_code + ") not found in the (" + enum_code + ") enumeration!"
+                        enumertaionsDiv.append(checkResultMsg);
+                    } else {
+                        missingInputsMsg.innerText = msgErr;
+                    }
+                })
+        }
+    </script>
+</body>
+
+</html>

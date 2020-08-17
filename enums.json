@@ -1,0 +1,401 @@
+[
+    {
+        "id": "1",
+        "lang_code": "EN",
+        "enum_code": "Day",
+        "enum_value_code": "Sun",
+        "enum_value_name": "Sunday"
+    },
+    {
+        "id": "2",
+        "lang_code": "EN",
+        "enum_code": "Day",
+        "enum_value_code": "Mon",
+        "enum_value_name": "Monday"
+    },
+    {
+        "id": "3",
+        "lang_code": "EN",
+        "enum_code": "Day",
+        "enum_value_code": "Tue",
+        "enum_value_name": "Tuesday"
+    },
+    {
+        "id": "4",
+        "lang_code": "EN",
+        "enum_code": "Day",
+        "enum_value_code": "Wed",
+        "enum_value_name": "Wednesday"
+    },
+    {
+        "id": "5",
+        "lang_code": "EN",
+        "enum_code": "Day",
+        "enum_value_code": "Thur",
+        "enum_value_name": "Thursday"
+    },
+    {
+        "id": "6",
+        "lang_code": "EN",
+        "enum_code": "Day",
+        "enum_value_code": "Fri",
+        "enum_value_name": "Friday"
+    },
+    {
+        "id": "7",
+        "lang_code": "EN",
+        "enum_code": "Day",
+        "enum_value_code": "Sat",
+        "enum_value_name": "Saturday"
+    },
+    {
+        "id": "8",
+        "lang_code": "AR",
+        "enum_code": "Day",
+        "enum_value_code": "Sun",
+        "enum_value_name": "أحد"
+    },
+    {
+        "id": "9",
+        "lang_code": "AR",
+        "enum_code": "Day",
+        "enum_value_code": "Mon",
+        "enum_value_name": "إثنين"
+    },
+    {
+        "id": "10",
+        "lang_code": "AR",
+        "enum_code": "Day",
+        "enum_value_code": "Tue",
+        "enum_value_name": "ثلاثاء"
+    },
+    {
+        "id": "11",
+        "lang_code": "AR",
+        "enum_code": "Day",
+        "enum_value_code": "Wed",
+        "enum_value_name": "أربعاء"
+    },
+    {
+        "id": "12",
+        "lang_code": "AR",
+        "enum_code": "Day",
+        "enum_value_code": "Thur",
+        "enum_value_name": "خميس"
+    },
+    {
+        "id": "13",
+        "lang_code": "AR",
+        "enum_code": "Day",
+        "enum_value_code": "Fri",
+        "enum_value_name": "جمعة"
+    },
+    {
+        "id": "14",
+        "lang_code": "AR",
+        "enum_code": "Day",
+        "enum_value_code": "Sat",
+        "enum_value_name": "سبت"
+    },
+    {
+        "id": "15",
+        "lang_code": "FR",
+        "enum_code": "Day",
+        "enum_value_code": "Sun",
+        "enum_value_name": "dimanche"
+    },
+    {
+        "id": "16",
+        "lang_code": "FR",
+        "enum_code": "Day",
+        "enum_value_code": "Mon",
+        "enum_value_name": "Lundi"
+    },
+    {
+        "id": "17",
+        "lang_code": "FR",
+        "enum_code": "Day",
+        "enum_value_code": "Tue",
+        "enum_value_name": "Mardi"
+    },
+    {
+        "id": "18",
+        "lang_code": "FR",
+        "enum_code": "Day",
+        "enum_value_code": "Wed",
+        "enum_value_name": "Mercredi"
+    },
+    {
+        "id": "19",
+        "lang_code": "FR",
+        "enum_code": "Day",
+        "enum_value_code": "Thur",
+        "enum_value_name": "Jeudi"
+    },
+    {
+        "id": "20",
+        "lang_code": "FR",
+        "enum_code": "Day",
+        "enum_value_code": "Fri",
+        "enum_value_name": "Vendredi"
+    },
+    {
+        "id": "21",
+        "lang_code": "FR",
+        "enum_code": "Day",
+        "enum_value_code": "Sat",
+        "enum_value_name": "samedi"
+    },
+    {
+        "id": "22",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Jan",
+        "enum_value_name": "January"
+    },
+    {
+        "id": "23",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Feb",
+        "enum_value_name": "February"
+    },
+    {
+        "id": "24",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Mar",
+        "enum_value_name": "March"
+    },
+    {
+        "id": "25",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Apr",
+        "enum_value_name": "April"
+    },
+    {
+        "id": "26",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "May",
+        "enum_value_name": "May"
+    },
+    {
+        "id": "27",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Jun",
+        "enum_value_name": "June"
+    },
+    {
+        "id": "28",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Jul",
+        "enum_value_name": "July"
+    },
+    {
+        "id": "29",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Aug",
+        "enum_value_name": "August"
+    },
+    {
+        "id": "30",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Sep",
+        "enum_value_name": "September"
+    },
+    {
+        "id": "31",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Oct",
+        "enum_value_name": "October"
+    },
+    {
+        "id": "32",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Nov",
+        "enum_value_name": "November"
+    },
+    {
+        "id": "33",
+        "lang_code": "EN",
+        "enum_code": "Month",
+        "enum_value_code": "Dec",
+        "enum_value_name": "December"
+    },
+    {
+        "id": "34",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Jan",
+        "enum_value_name": "كانون الثاني"
+    },
+    {
+        "id": "35",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Feb",
+        "enum_value_name": "شباط"
+    },
+    {
+        "id": "36",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Mar",
+        "enum_value_name": "آذار"
+    },
+    {
+        "id": "37",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Apr",
+        "enum_value_name": "نيسان"
+    },
+    {
+        "id": "38",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "May",
+        "enum_value_name": "أيّار"
+    },
+    {
+        "id": "39",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Jun",
+        "enum_value_name": "حزيران"
+    },
+    {
+        "id": "40",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Jul",
+        "enum_value_name": "تمّوز"
+    },
+    {
+        "id": "41",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Aug",
+        "enum_value_name": "آب"
+    },
+    {
+        "id": "42",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Sep",
+        "enum_value_name": "أيلول"
+    },
+    {
+        "id": "43",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Oct",
+        "enum_value_name": "تشرين الأول"
+    },
+    {
+        "id": "44",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Nov",
+        "enum_value_name": "تشرين الثاني"
+    },
+    {
+        "id": "45",
+        "lang_code": "AR",
+        "enum_code": "Month",
+        "enum_value_code": "Dec",
+        "enum_value_name": "كانون الأول"
+    },
+    {
+        "id": "46",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Jan",
+        "enum_value_name": "janvier"
+    },
+    {
+        "id": "47",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Feb",
+        "enum_value_name": "février"
+    },
+    {
+        "id": "48",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Mar",
+        "enum_value_name": "Mars"
+    },
+    {
+        "id": "49",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Apr",
+        "enum_value_name": "avril"
+    },
+    {
+        "id": "50",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "May",
+        "enum_value_name": "Mai"
+    },
+    {
+        "id": "51",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Jun",
+        "enum_value_name": "juin"
+    },
+    {
+        "id": "52",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Jul",
+        "enum_value_name": "juillet"
+    },
+    {
+        "id": "53",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Aug",
+        "enum_value_name": "août"
+    },
+    {
+        "id": "54",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Sep",
+        "enum_value_name": "septembre"
+    },
+    {
+        "id": "55",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Oct",
+        "enum_value_name": "octobre"
+    },
+    {
+        "id": "56",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Nov",
+        "enum_value_name": "novembre"
+    },
+    {
+        "id": "57",
+        "lang_code": "FR",
+        "enum_code": "Month",
+        "enum_value_code": "Dec",
+        "enum_value_name": "décembre"
+    }
+]

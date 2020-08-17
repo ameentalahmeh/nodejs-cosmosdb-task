@@ -2,10 +2,11 @@
 A azure function app allows the user to browse the enumerations via select the language and enumeration inputs. In addition to, the user can check the validation of the the given enumeration value through check if the enumeration value code related with an enumeration that stored in the cosmos database.
 
 # Technolgies
-  - Database **(Cosmosdb)**.
-  - Back-End **(Nodejs.Js)**.
-  - **Azure**.
-  - **MVC**.
+ - Front-End **(HTML && CSS && JS)**.
+ - Back-End **(NodeJs)**.
+ - Database **(Cosmosdb)**.
+ - **Azure**.
+ - **MVC**.
   
   
   # Run project:

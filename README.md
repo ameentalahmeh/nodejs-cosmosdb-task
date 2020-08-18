@@ -1,5 +1,5 @@
 # Nodejs-Cosmosdb-task 
-A azure function app allows the user to browse the enumerations via select the language and enumeration inputs. In addition to, the user can check the validation of the the given enumeration value through check if the enumeration value code related with an enumeration that stored in the cosmos database.
+A azure function app allows the user to browse the enumerations via select the language and enumeration inputs. In addition, the user can check the validation of the given enumeration value through a check if the enumeration value code related to an enumeration that stored in the cosmos database.
 
 # Technolgies
  - Front-End **(HTML && CSS && JS)**.
